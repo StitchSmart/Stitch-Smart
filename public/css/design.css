@@ -1,0 +1,158 @@
+/* =========================================================
+   THEME-AWARE DESIGN INTERFACE STYLING
+   Syncs with Coffee & Bronze / Luxury themes
+========================================================= */
+
+.design-page iframe {
+  margin: 20px auto;
+  display: block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--accent-bronze) !important;
+}
+
+.top-bar {
+  display: none !important;
+}
+
+body {
+    background: var(--bg-gradient) !important;
+    background-attachment: fixed !important;
+    color: var(--text-main) !important;
+    min-height: 100vh;
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#home h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: var(--font-headings) !important;
+    color: var(--text-main) !important;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media (min-width: 600px)  { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .grid { grid-template-columns: repeat(4, 1fr); } }
+
+.card {
+  background: rgba(255, 255, 255, 0.08) !important; /* Theme Glassmorphism */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(205, 154, 72, 0.2) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+  border-color: var(--accent-bronze) !important;
+}
+
+.card-content {
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  max-width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-title {
+  font-family: var(--font-headings);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary) !important;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #5C4335) !important;
+  line-height: 1.4;
+}
+
+.design-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.design-page h1 {
+  font-family: var(--font-headings);
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: var(--accent-bronze) !important;
+}
+
+.design-page p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: var(--text-muted) !important;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 35px;
+  background: var(--accent-bronze) !important;
+  color: #1a0f0a !important;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #e0ac5a !important;
+  transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
+  .card img { max-width: 130px; height: 130px; }
+  .card-title { font-size: 1.1rem; }
+}

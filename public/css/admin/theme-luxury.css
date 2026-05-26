@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-dark: #000000; /* Solid Black */
+    --bg-gradient: radial-gradient(circle at 50% 50%, #111111 0%, #000000 100%);
+    --bg-card: #0a0a0a;
+    --accent-bronze: #c19a4e;
+    --accent-brown: #8b5a2b; /* Warm Brown for Hover */
+    --accent-brown-light: #a67c52;
+    --text-primary: #ffffff;
+    --text-muted: #b0b0b0;
+    --border-color: rgba(193, 154, 78, 0.3);
+    --card-radius: 12px;
+}
+
+body {
+    background: var(--bg-gradient) fixed;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+}
+
+/* Headings & Airy "Cloud" Font Style */
+h1, h2, h3, h4, h5, h6, .card-title, .chart-label, .form-label, label, .table th, .table td {
+    font-family: 'Outfit', sans-serif !important;
+    letter-spacing: 0.5px;
+}
+
+/* 1. Global Background Fixes - Forced Dark Mode */
+html, body, main, .container, .container-fluid, .row, .col-xl-10, .col-sm-9 {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.col-xl-10, .col-sm-9 {
+    animation: contentFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes contentFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Solidify Cards & Tables (No white allowed) */
+.card, .box, form.border, .table-responsive, .rounded-top, .modal-content {
+    background-color: #0a0a0a !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+}
+
+/* Forced Table Darkening */
+.table, .table td, .table th, .table tr {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+.table thead th {
+    background-color: #111111 !important;
+    color: var(--accent-bronze) !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255,255,255,0.02) !important;
+}
+
+/* 3. Sidebar - Custom Staggered Animations & Gold Styling */
+.sidebar {
+  background: #0a0a0a !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--card-radius) !important;
+  padding: 30px 15px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.sidebar table {
+  border: none !important;
+}
+
+.sidebar td, .sidebar th, .sidebar tr {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.sidebar thead th h5 {
+  color: var(--accent-bronze) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-bronze) !important;
+  padding-bottom: 12px;
+}
+
+.sidebar .nav-link {
+  display: block !important;
+  color: #ffffff !important;
+  padding: 14px 22px !important;
+  margin-bottom: 10px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(193, 154, 78, 0.15) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  opacity: 0;
+  animation: sidebarLinkIn 0.6s ease-out forwards;
+}
+
+@keyframes sidebarLinkIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Staggered animation for links */
+.sidebar tbody tr:nth-child(1) .nav-link { animation-delay: 0.05s; }
+.sidebar tbody tr:nth-child(2) .nav-link { animation-delay: 0.1s; }
+.sidebar tbody tr:nth-child(3) .nav-link { animation-delay: 0.15s; }
+.sidebar tbody tr:nth-child(4) .nav-link { animation-delay: 0.2s; }
+.sidebar tbody tr:nth-child(5) .nav-link { animation-delay: 0.25s; }
+.sidebar tbody tr:nth-child(6) .nav-link { animation-delay: 0.3s; }
+.sidebar tbody tr:nth-child(7) .nav-link { animation-delay: 0.35s; }
+.sidebar tbody tr:nth-child(8) .nav-link { animation-delay: 0.4s; }
+
+.sidebar .nav-link:hover {
+  background: linear-gradient(135deg, var(--accent-bronze) 0%, var(--accent-brown) 100%) !important;
+  color: #000000 !important;
+  transform: scale(1.05) translateX(8px);
+  box-shadow: 0 5px 20px rgba(193, 154, 78, 0.3) !important;
+  border-color: var(--accent-bronze) !important;
+}
+
+.sidebar .nav-link.active {
+  background: linear-gradient(135deg, var(--accent-bronze) 0%, var(--accent-brown) 100%) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-color: var(--accent-bronze) !important;
+  box-shadow: 0 5px 15px rgba(193, 154, 78, 0.4) !important;
+}
+
+.sidebar .logout-link {
+  color: #ff6b6b !important;
+  border-color: rgba(255, 107, 107, 0.2) !important;
+}
+
+.sidebar .logout-link:hover {
+  background: linear-gradient(135deg, #ff4757 0%, #ff6b6b 100%) !important;
+  color: #ffffff !important;
+  border-color: #ff4757 !important;
+  box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3) !important;
+}
+
+/* Form Inputs Visibility */
+.form-control, .form-select, textarea, .summernote-box {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Fix for any white text on light buttons */
+.btn-light {
+    background-color: #f8f9fa !important;
+    color: #000 !important;
+}
+
+/* Graph Text Fixes, Main Headings & Subheadings */
+h1, h2, h3, h4, h5, h6, .card-title, .chart-label, .form-label, label {
+    color: var(--accent-bronze) !important;
+}
+
+/* Input Fields */
+.form-control, .form-select, textarea {
+    background: #111 !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+}
+
+/* Button & Accent Overrides - Replacing Blues/Greens/Reds with Luxury Palette */
+/* Global Button Mastery - No more blue/green/red defaults */
+.btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-dark, .btn-light, 
+.btn-outline-primary, .btn-outline-secondary, .btn-outline-success, .btn-outline-info, .btn-outline-warning, .btn-outline-dark,
+#mbut, #dbutton, #dbutton2 {
+    background: linear-gradient(135deg, var(--accent-bronze) 0%, var(--accent-brown) 100%) !important;
+    border: 1px solid var(--accent-bronze) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(193, 154, 78, 0.2) !important;
+    padding: 10px 25px !important;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-success:hover, .btn-info:hover, .btn-warning:hover, .btn-dark:hover, .btn-light:hover,
+#mbut:hover, #dbutton:hover, #dbutton2:hover {
+    background: var(--accent-brown) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.4) !important;
+    border-color: var(--accent-bronze) !important;
+}
+
+/* Destructive Actions stay Red but follow the Pill style */
+.btn-danger, .btn-delete {
+    background: linear-gradient(135deg, #8b3a3a 0%, #4a1a1a 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(139, 58, 58, 0.2);
+    padding: 10px 25px !important;
+}
+
+.btn-danger:hover {
+    background: #4a1a1a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 26, 26, 0.4);
+}
+
+/* Unified Form Labels */
+.form-label, label {
+    color: var(--accent-bronze) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Global Table & Card Consistency */
+.card {
+    background: #0a0a0a !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.card-header {
+    background: var(--accent-bronze) !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+.card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5 {
+    color: #000 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table {
+    color: #fff !important;
+}
+
+.table thead th {
+    background: rgba(193, 154, 78, 0.1) !important;
+    color: var(--accent-bronze) !important;
+    border-bottom: 2px solid var(--accent-bronze) !important;
+}
+
+.table tbody td {
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+/* Validation Alerts */
+.alert {
+    border-radius: 15px !important;
+    font-weight: 600;
+}
+
+.dbox, .box.db {
+    background: linear-gradient(135deg, #3d241c 0%, #1a0f0a 100%) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--accent-bronze) !important;
+}
+
+.dbox h6, .box.db label {
+    color: #ffffff !important;
+}
+
+.text-primary, .text-info {
+    color: var(--accent-bronze) !important;
+}
+
+/* Fix for any remaining blue/green gradients or backgrounds */
+.bg-primary, .bg-info, .bg-success {
+    background-color: var(--accent-bronze) !important;
+}
+
+/* Category Selector in Add Product */
+.category-hover-selector {
+  background-color: #0a0a0a !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.category-hover-selector select {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.category-hover-selector select optgroup {
+  color: var(--accent-bronze) !important;
+  background-color: #111111 !important;
+}
+
+.category-hover-selector select option {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+}
+
+.category-hover-selector select option.category-placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  background-color: #000000 !important;
+}
+
+/* =========================================================
+   UNIVERSAL TEXT VISIBILITY OVERRIDES (ADMIN PANEL)
+   ========================================================= */
+
+/* Ensure all generic text elements are white or light gray */
+body, p, span, div, li, td, th, label, small {
+    color: #e2e8f0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--accent-bronze) !important;
+}
+
+/* Override any hardcoded Bootstrap dark text classes */
+.text-dark, .text-black, .text-body {
+    color: #ffffff !important;
+}
+
+.text-muted, .text-secondary {
+    color: #b0b0b0 !important;
+}
+
+.text-black-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Ensure inputs and selects have visible text */
+input, textarea, select, .form-control, .form-select {
+    color: #ffffff !important;
+}
+
+/* Any links that aren't specifically styled */
+a:not(.btn):not(.nav-link):not(.sidebar-link) {
+    color: var(--accent-bronze);
+}
+a:not(.btn):not(.nav-link):not(.sidebar-link):hover {
+    color: #fff;
+}

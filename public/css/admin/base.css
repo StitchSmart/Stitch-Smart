@@ -1,0 +1,185 @@
+/* Stitch-Smart Core Theme System */
+
+:root {
+    /* Semantic Variable Defaults (Light Mode) */
+    --bg-background: #ffffff;
+    --bg-surface: #f9fafb;
+    --text-foreground: #111827;
+    --text-muted: #6b7280;
+    --border-muted: #e5e7eb;
+    --accent-primary: #4f46e5; /* Indigo */
+    --accent-foreground: #ffffff;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+body {
+    background-color: var(--bg-background);
+    color: var(--text-foreground);
+    font-family: var(--font-main);
+    margin: 0;
+    line-height: 1.5;
+    transition: var(--transition);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+/* Global Component Styling */
+.card, .box, .table-responsive {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-muted);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.btn {
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.form-control, .form-select {
+    background-color: var(--bg-background);
+    border: 1px solid var(--border-muted);
+    border-radius: var(--radius-md);
+    color: var(--text-foreground);
+}
+
+.form-control:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Sidebar Customization */
+#sidebar {
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-muted);
+}
+
+#sidebar .nav-link {
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    margin: 0.25rem 0;
+}
+
+#sidebar .nav-link:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: var(--text-foreground);
+}
+
+#sidebar .nav-link.active {
+    background-color: var(--accent-primary);
+    color: var(--accent-foreground);
+}
+
+/* Header & Announcement Bar */
+.announcement-bar {
+    background-color: var(--accent-primary);
+    color: var(--accent-foreground);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+/* Theme Switcher Styles */
+.theme-switcher {
+    display: inline-flex;
+    gap: 10px;
+    background: rgba(0,0,0,0.2);
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.theme-btn {
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    color: rgba(255,255,255,0.6) !important;
+    border: 1px solid transparent;
+}
+
+.theme-btn:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.05);
+}
+
+.theme-btn.active {
+    background: #fff;
+    color: #000 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.theme-btn.luxury.active {
+    background: linear-gradient(135deg, #c19a4e 0%, #8b5a2b 100%);
+    color: #000 !important;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.theme-btn.luxury:not(.active) {
+    color: #c19a4e !important;
+}
+
+.order-bell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+}
+
+.order-bell:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.16);
+}
+
+.notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #dc3545;
+    border-radius: 999px;
+    border: 2px solid var(--bg-surface, #fff);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+}

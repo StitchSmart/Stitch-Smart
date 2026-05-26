@@ -1,0 +1,27 @@
+/* Theme: Dark Mode (Midnight) */
+:root {
+    --bg-background: #0f172a;
+    --bg-surface: #1e293b;
+    --text-foreground: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-muted: rgba(148, 163, 184, 0.2);
+    --accent-primary: #38bdf8; /* Sky Blue */
+}
+
+body {
+    background-color: var(--bg-background);
+    color: var(--text-foreground);
+}
+
+.table {
+    color: var(--text-foreground);
+}
+
+.table thead th {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+#sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.05);
+}

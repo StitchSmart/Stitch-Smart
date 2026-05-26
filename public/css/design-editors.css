@@ -1,0 +1,168 @@
+/* =========================================================
+   THEME-AWARE DESIGN EDITORS (Hoodie, Crewneck, etc.)
+   Applies Coffee & Bronze / Luxury themes to the editor forms
+========================================================= */
+
+body {
+    background-color: transparent !important;
+    background: var(--bg-gradient) !important;
+    background-attachment: fixed !important;
+    color: var(--text-primary, #ffffff) !important;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+}
+
+.top-bar {
+    display: none !important;
+}
+
+.card {
+    background: var(--bg-card, rgba(255, 255, 255, 0.05)) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color, rgba(205, 154, 72, 0.2)) !important;
+    border-radius: 20px !important;
+    color: var(--text-primary, #fff) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Outfit', 'Playfair Display', serif !important;
+    color: var(--accent-bronze, #c19a4e) !important;
+    font-weight: 700 !important;
+}
+
+.form-label, .form-check-label {
+    color: var(--text-muted, #b0b0b0) !important;
+}
+
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(205, 154, 72, 0.3) !important;
+    color: var(--editor-input-text, var(--text-main, #ffffff)) !important;
+    border-radius: 10px !important;
+}
+
+.form-select, .form-select option {
+    color: var(--editor-input-text, var(--text-main, #ffffff)) !important;
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+    color: var(--editor-input-placeholder, rgba(255,255,255,0.75)) !important;
+    opacity: 1 !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: var(--accent-bronze) !important;
+    box-shadow: 0 0 0 0.25rem rgba(205, 154, 72, 0.25) !important;
+    color: var(--editor-input-text, var(--text-main, #ffffff)) !important;
+}
+
+.form-check-label, .form-label {
+    color: var(--editor-input-text, var(--text-main, #ffffff)) !important;
+
+.btn-primary {
+    background-color: var(--accent-bronze) !important;
+    border: none !important;
+    color: #1a0f0a !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    padding: 10px 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background-color: #e0ac5a !important;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+.progress {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    height: 10px !important;
+    border-radius: 50px !important;
+}
+
+.progress-bar {
+    background-color: var(--accent-bronze) !important;
+}
+
+.validation-alert {
+    display: none !important;
+    margin-bottom: 1.5rem !important;
+    padding: 14px 18px !important;
+    border-radius: 14px !important;
+    background: rgba(248, 215, 218, 0.92) !important;
+    border: 1px solid rgba(220, 53, 69, 0.35) !important;
+    color: #7f1d1d !important;
+    font-weight: 700 !important;
+}
+
+.validation-alert.show {
+    display: block !important;
+}
+
+.color-circle {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.color-circle.selected {
+    border: 3px solid var(--accent-bronze) !important;
+    transform: scale(1.2);
+}
+
+.size-chart th {
+    background-color: rgba(205, 154, 72, 0.2) !important;
+    color: var(--accent-bronze) !important;
+}
+
+.size-chart td {
+    color: var(--text-muted) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dynamic-image {
+    border: 1px solid rgba(205, 154, 72, 0.3) !important;
+    border-radius: 15px !important;
+    background: rgba(0,0,0,0.2) !important;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 10px !important;
+    }
+    .card {
+        padding: 15px !important;
+        border-radius: 15px !important;
+    }
+    .dynamic-image {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .btn-primary {
+        width: 100% !important;
+        margin-top: 10px;
+    }
+}
+
+/* ── Theme-Aware Sticky Live Preview Pane ── */
+#livePreviewContainer {
+    background: var(--bg-card, rgba(255, 255, 255, 0.9)) !important;
+    border: 1px solid var(--border-color, rgba(193, 154, 78, 0.2)) !important;
+    color: var(--text-primary, #ffffff) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 12px;
+}
+
+#livePreviewContainer h6 {
+    color: var(--accent-bronze, #c19a4e) !important;
+}
+
+#livePreviewContainer div, #livePreviewContainer span, #livePreviewContainer strong {
+    color: var(--text-primary, #ffffff) !important;
+}

@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* =========================================================
+   AGGRESSIVE COFFEE & BRONZE ADMIN THEME (DARK MODE)
+   Forcing Theme on all Management Pages & Tables
+========================================================= */
+
+:root {
+  /* Color Palette */
+  --admin-bg: #2d1a13; 
+  --admin-bg-gradient: linear-gradient(135deg, #2D1A13 0%, #3e271a 50%, #4A2B1D 100%);
+  
+  --admin-surface: rgba(255, 255, 255, 0.08);
+  --admin-text: #FAF5ED; 
+  --admin-text-dark: #1a0f0a;
+  
+  --admin-accent: #CD9A48; /* Bronze */
+  --admin-border: rgba(205, 154, 72, 0.2);
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GLOBAL OVERRIDES */
+body, .main-content, .container-fluid, .wrapper {
+  background: var(--admin-bg-gradient) !important;
+  background-attachment: fixed !important;
+  color: var(--admin-text) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--admin-text) !important;
+}
+
+/* Header & Sidebar */
+.head {
+  background: rgba(45, 26, 19, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--admin-border) !important;
+}
+
+.sidenav {
+  background: #1a0f0a !important;
+  border-right: 1px solid var(--admin-border);
+}
+
+.sidenav a:hover, .sidenav a.active {
+  background: var(--admin-accent) !important;
+  color: var(--admin-text-dark) !important;
+}
+
+/* CARDS & CONTAINERS (FORCING DARK) */
+.card, .box, .stats-card, .card-body, .modal-content {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--admin-border) !important;
+  border-radius: 15px !important;
+  color: var(--admin-text) !important;
+  animation: slideUpFade 0.6s ease forwards;
+}
+
+/* TABLES (FORCING DARK) */
+.table, .table-responsive {
+    background: transparent !important;
+    color: var(--admin-text) !important;
+    border-color: var(--admin-border) !important;
+}
+
+.table thead th {
+  background: rgba(205, 154, 72, 0.2) !important;
+  color: var(--admin-accent) !important;
+  border-bottom: 2px solid var(--admin-accent) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+    background: transparent !important;
+    transition: background 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255,255,255,0.03) !important;
+}
+
+.table td {
+  border-bottom: 1px solid var(--admin-border) !important;
+  color: var(--admin-text) !important;
+  background: transparent !important;
+}
+
+/* FORMS & INPUTS */
+.form-control, .form-select, textarea {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--admin-border) !important;
+  color: #ffffff !important;
+  border-radius: 10px;
+}
+
+.form-control:focus {
+  border-color: var(--admin-accent) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* BUTTONS (FORCE BRONZE) */
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-blue, 
+.btn-add, .btn-edit, button[type="submit"], .btn-sm {
+  background: var(--admin-accent) !important;
+  border: none !important;
+  color: #1a0f0a !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover, .btn-info:hover, button[type="submit"]:hover {
+  background: #e0ac5a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(205, 154, 72, 0.4);
+}
+
+.btn-danger, .btn-delete {
+  background: #8b3a3a !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* FIXING SPECIFIC ELEMENTS */
+.card-header, .bg-success, .header-bar, .title-bar {
+    background: var(--admin-accent) !important;
+    color: #1a0f0a !important;
+}
+
+.text-dark, .text-black {
+    color: var(--admin-text) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a0f0a; }
+::-webkit-scrollbar-thumb { background: var(--admin-accent); border-radius: 10px; }
+
+/* Button & Accent Overrides - Replacing Blues/Greens/Reds with Coffee Palette */
+#dbutton, #dbutton2, .btn-primary, .btn-warning, .btn-info, .btn-success {
+    background: linear-gradient(135deg, var(--admin-accent) 0%, #3d241c 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    padding: 8px 25px !important;
+}
+
+.btn-danger, .btn-delete {
+    background: linear-gradient(135deg, #8b3a3a 0%, #5c2424 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    padding: 8px 25px !important;
+}
+
+#dbutton:hover, #dbutton2:hover, .btn-primary:hover, .btn-success:hover {
+    background: #3d241c !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(61, 36, 28, 0.3);
+}
+
+.btn-danger:hover {
+    background: #5c2424 !important;
+    transform: translateY(-2px);
+}
+
+.dbox {
+    background: #3d241c !important;
+    border: 1px solid var(--admin-border) !important;
+    color: var(--admin-accent) !important;
+}
+
+/* =========================================================
+   SIDEBAR CUSTOM STYLING (DEFAULT THEME - COFFEE)
+   ========================================================= */
+.sidebar {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--admin-border) !important;
+  border-radius: 15px !important;
+  padding: 20px 10px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
+}
+
+.sidebar table {
+  border: none !important;
+}
+
+.sidebar td, .sidebar th, .sidebar tr {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.sidebar thead th h5 {
+  color: var(--admin-accent) !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--admin-accent) !important;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.sidebar .nav-link {
+  display: block !important;
+  color: var(--admin-text) !important;
+  padding: 12px 20px !important;
+  margin-bottom: 8px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid transparent !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(205, 154, 72, 0.15) !important;
+  color: var(--admin-accent) !important;
+  transform: translateX(5px);
+  border-color: rgba(205, 154, 72, 0.3) !important;
+}
+
+.sidebar .nav-link.active {
+  background: var(--admin-accent) !important;
+  color: var(--admin-text-dark) !important;
+  box-shadow: 0 4px 15px rgba(205, 154, 72, 0.25) !important;
+  border-color: var(--admin-accent) !important;
+}
+
+.sidebar .logout-link {
+  color: #ff6b6b !important;
+  border-color: rgba(255, 107, 107, 0.2) !important;
+}
+
+.sidebar .logout-link:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff8787 !important;
+  border-color: rgba(255, 107, 107, 0.4) !important;
+}
+
+/* Category Selector in Add Product */
+.category-hover-selector {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--admin-border) !important;
+}
+
+.category-hover-selector select {
+  background-color: transparent !important;
+  color: var(--admin-text) !important;
+}
+
+.category-hover-selector select optgroup {
+  color: var(--admin-accent) !important;
+  background-color: #3e271a !important;
+}
+
+.category-hover-selector select option {
+  color: var(--admin-text) !important;
+  background-color: #2d1a13 !important;
+}
+
+.category-hover-selector select option.category-placeholder {
+  color: rgba(254, 245, 237, 0.6) !important;
+  background-color: #2d1a13 !important;
+}
